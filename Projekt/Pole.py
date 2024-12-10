@@ -53,7 +53,7 @@ class Board:
                     self.canvas.create_rectangle(x0, y0, x1, y1, outline="black", fill="blue")
                 elif (posx1, posy1) == (j, i):
                     self.canvas.create_rectangle(x0, y0, x1, y1, outline="black", fill="green")
-                elif (j, i) in self.tasks.keys():
+                elif (j, i) in self.tasks.keys() and self.tasks[(j, i)] != None:
                     self.canvas.create_rectangle(x0, y0, x1, y1, outline="black", fill="red")
                 else:
                     self.canvas.create_rectangle(x0, y0, x1, y1, outline="black", fill="white")
