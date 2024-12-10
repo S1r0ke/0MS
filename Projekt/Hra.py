@@ -94,9 +94,10 @@ class Game:
     def start(self): 
         self.board.vytvor_pole_ctvercu_gui(self.players[0].position[0], self.players[0].position[1], self.players[1].position[0], self.players[0].position[1])
         self.root.mainloop()
-        self.play_turn()
-        self.play_turn()
 
 if __name__ == "__main__":
-    game = Game(num_players=2, board_size=10, num_tasks=20, num_moves=60)
+    size = int(input("Zadejte velikost pole: "))
+    tasks = int(input("Zadejte počet otázek: "))
+    moves = int(input("Zadejte počet tahů: "))
+    game = Game(num_players=2, board_size=size, num_tasks=tasks, num_moves=moves)
     game.start()
