@@ -16,15 +16,7 @@ class OtazkaDialog:
         answer = simpledialog.askstring("Otázka", question, parent=self.root)
         
         if answer is not None:
-            try:
-                # Pokus o konverzi odpovědi na celé číslo
-                answer = int(answer)
-            except ValueError:
-                # Zobrazení chybové zprávy, pokud odpověď není číslo
-                messagebox.showerror("Chyba", "Odpověď musí být číslo.")
-                # Znovu zavolá metodu pro zobrazení otázky
-                return self.ask_question() # Možná chyba
-            if answer == correct_answer:
+            if str(answer) == str(correct_answer):
                 messagebox.showinfo("Výsledek", "Správně!")
             else:
                 messagebox.showinfo("Výsledek", "Špatně! Správná odpověď je: " + str(correct_answer))
