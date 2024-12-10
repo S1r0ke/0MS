@@ -12,7 +12,6 @@ class OtazkaDialog:
         # Zobrazení otázky a zpracování odpovědi
         # Získání náhodné otázky a její správné odpovědi
         question, correct_answer = self.otazky.get_random_question()
-        
         # Zobrazení dialogového okna pro zadání odpovědi
         answer = simpledialog.askstring("Otázka", question, parent=self.root)
         
@@ -25,7 +24,6 @@ class OtazkaDialog:
                 messagebox.showerror("Chyba", "Odpověď musí být číslo.")
                 # Znovu zavolá metodu pro zobrazení otázky
                 return self.ask_question() # Možná chyba
-
             if answer == correct_answer:
                 messagebox.showinfo("Výsledek", "Správně!")
             else:
